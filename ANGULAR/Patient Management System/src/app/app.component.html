@@ -1,0 +1,112 @@
+<div id="header"><br>
+<h1>PATIENT MANAGEMENT SYSTEM</h1>
+</div><br>
+<div id="side1">
+  <div id="s1">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <form #myForm="ngForm">
+            <div class="form-group">
+              <label for="Patient Id">Patient Id</label><br><br>
+              <input type="text" class="form-control" name="patientId" #patientId="ngModel" ngModel required pattern="[0-9]+" placeholder="Enter Your Id"/>
+            </div>
+            <div *ngIf="patientId.touched">
+              <div *ngIf="patientId.errors?.['required']">
+                <b style="color: red;">Patient Id Required.</b>
+              </div>
+              <div *ngIf="patientId.errors?.['pattern']">
+                <b style="color: red;">Invalid Patient Id.</b>
+              </div>
+            </div><br>
+            <div class="form-group">
+              <label for="Patient Name">Patient Name</label><br><br>
+              <input type="text" class="form-control"  name="patientName"  #patientName="ngModel" ngModel required placeholder="Enter Your Name"  />
+            </div>
+            <div *ngIf="patientName.touched">
+              <div *ngIf="patientName.errors?.['required']">
+                <b style="color: red;">Patient Name Required.</b>
+              </div>
+            </div><br>
+            <div class="form-group">
+              <label for="Patient Age">Patient Age</label><br><br>
+              <input type="text" class="form-control" name="patientAge"  #patientAge="ngModel" ngModel required pattern="[0-9]+" placeholder="Enter Your Age" />
+            </div><br>
+            <div *ngIf="patientAge.touched">
+              <div *ngIf="patientAge.errors?.['required']">
+                <b style="color: red;">Patient Age Required.</b>
+              </div>
+              <div *ngIf="patientAge.errors?.['pattern']">
+                <b style="color: red;">Invalid Patient Age.</b>
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="Patient City">Patient City</label><br><br>
+            <input type="text"  class="form-control" name="patientCity" #patientCity="ngModel" ngModel required placeholder="Enter  Your City"/>
+          </div>
+          <div *ngIf="patientCity.touched">
+            <div *ngIf="patientCity.errors?.['required']">
+              <b style="color: red;">Patient City Required.</b>
+            </div>
+          </div><br>
+          <div class="form-group">
+            <label for="Patient Issue">Affected By </label><br><br>
+            <input type="text"  class="form-control"  name="patientIssue" #patientIssue="ngModel" ngModel required placeholder="Enter Your Issue"/>
+          </div>
+          <div *ngIf="patientIssue.touched">
+            <div *ngIf="patientIssue.errors?.['required']">
+              <b style="color: red;">Required</b>
+            </div>
+          </div><br>
+          <div class="form-group">
+            <label for="Patient Ad">Admitted Date</label><br><br>
+            <input type="date"class="form-control" name="patientAd" #patientAd="ngModel" ngModel required/>
+          </div>
+          <div *ngIf="patientAd.touched">
+            <div *ngIf="patientAd.errors?.['required']">
+              <b style="color: red;">Admitted Date Required.</b>
+            </div>
+          </div><br>
+          <div class="form-group">
+            <label for="Patient Dd">Discharge Date</label> <br><br>
+            <input type="date" class="form-control" name="patientDd"  #patientDd="ngModel" ngModel required/>
+          </div>
+          <div *ngIf="patientDd.touched">
+            <div *ngIf="patientDd.errors?.['required']">
+              <b style="color: red;">Discharged Date Required.</b>
+            </div>
+          </div><br><br><br><br><br>
+          <button class="btn btn-success"(click)="insertPatient(myForm.value)">Insert </button>&nbsp;&nbsp;
+          <button class="btn btn-primary"  (click)="updatePatient(myForm.value)"> Update </button>&nbsp;&nbsp;
+          <button class="btn btn-danger"(click)="deletePatient(myForm.value)" > Delete </button>&nbsp;&nbsp;
+          <button class="btn btn-warning"(click)="findPatient(myForm.value)" >Find </button> &nbsp;&nbsp;
+          <button class="btn btn-info" (click)="findAllPatient()">Find All</button>
+        </form>
+      </div>
+    </div>
+   </div> <br> <br>
+   <h3>{{ result }}</h3>
+  </div>
+  <div id="s2"><br><h3 style="font-weight: bold; text-align: center;">PATIENTS LISTS</h3><br> <hr>
+    <div style="width: 100%;text-align: center;" *ngIf="flag">
+      <table class="table table-borderd">
+        <tr>
+          <th>Patient Id</th><th>Patient Name</th><th>Patient Age</th>
+          <th>Patient City</th><th>Affected By</th><th>Admitted Date</th>
+          <th>Discharge Date</th>
+        </tr>
+        <tr *ngFor="let patient of patientArr">
+          <td> {{patient.id}} </td><td> {{patient.patientName}} </td><td> {{patient.patientAge}} </td>
+          <td> {{patient.patientCity}} </td><td> {{patient.patientIssue}} </td><td> {{patient.patientAd}} </td>
+          <td> {{patient.patientDd}} </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+        
+
+
+
+               

@@ -1,0 +1,40 @@
+{
+  "patients": [
+    {
+      "id": "08",
+      "patientName": "Anirudh",
+      "patientAge": "35",
+      "patientCity": "chennai",
+      "patientIssue": "dengu",
+      "patientAd": "2024-08-01",
+      "patientDd": "2024-08-10"
+    },
+    {
+      "id": "25",
+      "patientName": "Kumar",
+      "patientAge": "57",
+      "patientCity": "Namakkal",
+      "patientIssue": "NC",
+      "patientAd": "2024-08-08",
+      "patientDd": "2024-08-08"
+    },
+    {
+      "id": "49",
+      "patientName": "hariHaran",
+      "patientAge": "20",
+      "patientCity": "gobi",
+      "patientIssue": "maleria",
+      "patientAd": "2024-08-05",
+      "patientDd": "2024-08-17"
+    },
+    {
+      "id": "7377",
+      "patientName": "Dharun Siva",
+      "patientAge": "25",
+      "patientCity": "Chennai",
+      "patientIssue": "Fever",
+      "patientAd": "2024-08-04",
+      "patientDd": "2024-08-07"
+    }
+  ]
+}
